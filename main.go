@@ -5,7 +5,7 @@ import (
 	"os"
 	"strconv"
 
-	"./genpass"
+	"github.com/gkiryaziev/go-password-generator/generator"
 )
 
 func main() {
@@ -14,7 +14,7 @@ func main() {
 	var length int = 14
 
 	if len(os.Args) < 2 {
-		fmt.Println("Usage: pass_gen <length> [-s]\t-s - optional, strong password.")
+		fmt.Println("Usage: password-generator <length> [-s]\n\t-s - optional, strong password.")
 		return
 	}
 
@@ -23,6 +23,6 @@ func main() {
 	}
 
 	length, _ = strconv.Atoi(os.Args[1])
-	password := genpass.Generate(length, strong)
+	password := generator.Generate(length, strong)
 	fmt.Println(password)
 }
