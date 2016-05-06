@@ -1,8 +1,8 @@
 package generator
 
 import (
-	"time"
 	"math/rand"
+	"time"
 )
 
 var allowedChars = []rune("QWERTYUIOPASDFGHJKLZXCVBNMqwertyuiopasdfghjklzxcvbnm0987654321")
@@ -14,7 +14,7 @@ func Generate(length int, strong bool) string {
 	newRandom(time.Now().UTC().UnixNano())
 	charsArray := make([]rune, length)
 	for i := range charsArray {
-		if strong && intToBool(i% next(3, length)) {
+		if strong && intToBool(i%next(3, length)) {
 			charsArray[i] = specialChars[next(0, len(specialChars))]
 		} else {
 			charsArray[i] = allowedChars[next(0, len(allowedChars))]
