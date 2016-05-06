@@ -1,9 +1,12 @@
-##	Генератор паролей
+## Password generator
 
-
-Использование:
-
-pass_gen.exe `length` `-s`
+Install:
 ```
--s		- включить в пароль специальные символы, по умолчанию false.
+go get github.com/gkiryaziev/go-password-generator
+```
+
+Usage:
+```
+password-generator <length> [-s]
+-s      usage special chars
 ```
